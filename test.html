@@ -9,11 +9,11 @@
         body {
             margin: 0;
             overflow: hidden;
+            cursor: pointer;
         }
-        
+
         #myCanvas {
-            cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAoCAYAAADt5povAAAAAXNSR0IArs4c6QAABHhJREFUWEdjZMAPWNhYWNpdzXVTQcp2n7w869efP1UMDAx/COjDKc1IQGPlht6yNn97E7CyjQdPMwQUd4MsbKeJhYbqCmfPLe0yQjbcILLs7MXbDyAuIAPg9aGNvtb1w3MbNJDNtU2pv37kwnUtMuwCaxm1cFAFKTcDAwMTAwPDZ1Lik+Q4tEmuuXPx5sP9AU5miazMTEzrD5xe9+Hzt0QGBoYvDAwMfAwMDGwMDAxvcDmCZAtNYisYWrMiGNwtDcBmnrtxn8EquWYGMyPT/1AX81QeTk7mdQdO7nn++kMUNotJtjC4rJdhbVcxigeskmoYSmP9GAIdzcDidx6/YDCJrVz+8ctXkKUogGQLY2snMyxuzkUxJLS8j2FVRxEDI5Jp/kXd7zcdOl1gpKlYIcjDw3/owo21v3//LqeKhdgcEVza819DUZqhJSsS7I6jF28yuGW3zKSZhWEV/QwLG7IZODlAaQgCAkp6viBbKMrAwMDOwMDwjIGB4R9IAbaiDZtvSBEDWSghIyq4PMDJ3IGTnY3h4q0Hb/edujLrz79/LTb6WmfRy1JSDEePa5BeRhFBvg1nFnX4y0uKwL0OCu/I2kkn5EQEJY/Ma5FHTiEUWxjqbPFjVWcRKChRwKkrdxhyu+cxnFzYhiJOsYU2huqPDs9ulsVWMsTUTmZYgpYFkpunM8ytzURRTqwYOEgZGBhSalKCZ1cmBDBwcaB6FJtv/v79x8DMDCpCEYBYMZiFIJ1usuLCjUua8yzsjDThJmGzEFtIECuGbCFID6u0mND+66v7rXm5OcFmYAtSYg3Hpg7dQpCa8PU9pSsCHEwZ/vz9y5DUOJ1hUVMOJXZgJDj0ksZ5fn3WngRfB4YDZ68yXLnzmCEn3IOmFjrMqc3Yn+zvxJDTOZehLjWEQUyIn6YW6nXmRl8si/dniKqZxLCsJY9qloEMwhaH3PG+jh8W1GeynLh8i8FCV42qFkZUT/yNUVtoykmevLp2ohly3UYtW12ymh5iq57Kjs5r6bTSo67vfv76zSDlnroOm4UiIc6WD1Z3FoJaZVQD0H5JItYKmImBoX7n1NpqZ3Pdv1ht/P+fUCcIpg2uziWr+cO+01cUcWlkV5AWO3p0bqu0pAgfpqX/iYlhhKMWbTnEldA4tZKBgWE6PpfKG6gr7N0xueqnmKAAjv4gAZ8yMjJ++PSFSSu46NWL9x+cQS0JQkGjoiIruWZtV+EPXRWFbzgjlBF3p6hmyjK5tgUbQA3lQyD9hCwEqRGSlxTdeXFZ52M+Xm7scQo2CXsw64UWK1659xjUn/xPrIUgde4lMX41nQWxVxgYCYTKP0Qwf/r6nUXEOZnx799/SRipiED6ZzHTVT11fEHzNrC6f8z4QwbqqKPnrwvapTa8YGBgaCTVQgYtRdkjV1f1rEVxGI5ghKnZdOCMhH9J13vkMQFi4hCsX1VWYv+tdZPnY4QEniBetuuYdHTVRFDcwQchiLZQXIh/2Ys9c/sY/vwhWk/P8m0ypf2LFBkYGPpgDgUAS8flzmrpvVgAAAAASUVORK5CYII=), default;
-            /* cursor: url("../img/mouse.png") 10 1, auto; */
+            cursor: url("../img/mouse.png") 10 1, auto;
         }
         #popImage {
             position: absolute;
@@ -53,7 +53,7 @@
 
             let loader = () => {
                 let loaderImg = new Image();
-                loaderImg.src = "./img/Loader1.png";
+                loaderImg.src = "./img/loader1.png";
                 loaderImg.onload = function () {
                     ctx.drawImage(loaderImg, 0, 0, canvas.width, canvas.height);
                 };
@@ -66,7 +66,7 @@
 
             // Draw the progress bar
             ctx.fillStyle = "blue";
-            ctx.fillRect(width/3.32,height/1.76, pgWidth, 19);
+            ctx.fillRect(width/3.30,height/1.76, pgWidth, 19);
 
             // Check if the progress is complete
             if (pg >= totalPg) {
@@ -82,40 +82,28 @@
                 };
 
                 var image = new Image();
-                image.src = './img/finalcloud.png';
+                image.src = './img/finalclouds.png';
                 var x = 0;
-                var y = 0;            
-                function animate(){
-                    ctx.drawImage(backgroundImage,0,0,canvas.width, canvas.height);
-                    ctx.drawImage(image, x, y+30,900,600);
-                    ctx.drawImage(image, x-900, y+30,900,600);
-                    ctx.drawImage(image, x+900, y+30,900,600);
-                    ctx.drawImage(image, x+1800, y+30,900,600);
-                    ctx.drawImage(image, x-1800, y+30,900,600);
-                    ctx.drawImage(image, x+2700, y+30,900,600);
-                    ctx.drawImage(image, x-2700, y+30,900,600);
-                    ctx.drawImage(image, x+3600, y+30,900,600);
-                    ctx.drawImage(image, x-3600, y+30,900,600);
-                    ctx.drawImage(image, x+4500, y+30,900,600);
-                    ctx.drawImage(image, x-4500, y+30,900,600);
-                    ctx.drawImage(image, x+5400, y+30,900,600);
-                    ctx.drawImage(image, x-5400, y+30,900,600);
-                    ctx.drawImage(image, x+6300, y+30,900,600);
-                    ctx.drawImage(image, x-6300, y+30,900,600);
-                    ctx.drawImage(image, x+7200, y+30,900,600);
-                    ctx.drawImage(image, x-7200, y+30,900,600);
-                    ctx.drawImage(image, x+8100, y+30,900,600);
-                    ctx.drawImage(image, x-8100, y+30,900,600);
-                    x+=2;
-                    if(x > canvas.width){
+                var y = 0;
+
+
+                function animate() {
+                    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(image, x, y, 400, 170);
+                    ctx.drawImage(image, x + 340, y - 10, 350, 140);
+                    ctx.drawImage(image, x + 700, y + 5, 400, 170);
+                    ctx.drawImage(image, x + 1010, y, 170, 100);
+                    ctx.drawImage(image, x + 1160, y + 5, 300, 170);
+                    ctx.drawImage(image, x + 1380, y - 15, 250, 120);
+                    x += 1;
+                    if (x > canvas.width) {
                         x = -image.width;
-                    }
-                    drawButton();
+                    };
                     requestAnimationFrame(animate);
-
+                    
                 };
+                drawButton();
                 animate();
-
                 var backgroundSound = document.getElementById('backgroundSound')
                 backgroundSound.play();
             };
@@ -159,55 +147,56 @@
             //T
             var imageA1 = new Image();
             imageA1.src = "./img/t1.png";
-            ctx.drawImage(imageA1, width - width / 1.4, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 1.4, height - height / 1.1, 100, 200);
             // Y
             var imageA1 = new Image();
             imageA1.src = "./img/t2.png";
-            ctx.drawImage(imageA1, width - width / 1.55, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 1.55, height - height / 1.1, 100, 200);
             // P
             var imageA1 = new Image();
             imageA1.src = "./img/t3.png";
-            ctx.drawImage(imageA1, width - width / 1.75, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 1.74, height - height / 1.1, 100, 200);
             // I
             var imageA1 = new Image();
             imageA1.src = "./img/t4.png";
-            ctx.drawImage(imageA1, width - width / 1.99, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 1.98, height - height / 1.1, 100, 200);
             // N
             var imageA1 = new Image();
             imageA1.src = "./img/t5.png";
-            ctx.drawImage(imageA1, width - width / 2.32, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 2.3, height - height / 1.1, 100, 200);
             // G
             var imageA1 = new Image();
             imageA1.src = "./img/t6.png";
-            ctx.drawImage(imageA1, width - width / 2.79, height - height / 1.1, 100, 160);
+            ctx.drawImage(imageA1, width - width / 2.75, height - height / 1.1, 100, 200);
             // B
             var imageA1 = new Image();
             imageA1.src = "./img/t7.png";
-            ctx.drawImage(imageA1,width/4, height/3, 100, 160);
+            ctx.drawImage(imageA1,width/4, height/3, 100, 200);
             // A
             var imageA1 = new Image();
             imageA1.src = "./img/t8.png";
-            ctx.drawImage(imageA1, width/3.1, height/3, 100, 160);
+            ctx.drawImage(imageA1, width/3.1, height/3, 100, 200);
             // L
             var imageA1 = new Image();
             imageA1.src = "./img/t9.png";
-            ctx.drawImage(imageA1, width/2.55, height/3, 100, 160);
+            ctx.drawImage(imageA1, width/2.55, height/3, 100, 200);
             // L
             var imageA1 = new Image();
-            imageA1.src = "./img/t10.png";
-            ctx.drawImage(imageA1, width/2.16, height/3, 100, 160);
+            imageA1.src = "./img/Lt10.png";
+            ctx.drawImage(imageA1, width/2.16, height/3, 100, 200);
             // O
             var imageA1 = new Image();
             imageA1.src = "./img/t11.png";
-            ctx.drawImage(imageA1, width/1.87, height/3, 100, 160);
+            ctx.drawImage(imageA1, width/1.87, height/3, 100, 200);
             // O
             var imageA1 = new Image();
             imageA1.src = "./img/t12.png";
-            ctx.drawImage(imageA1, width/1.65, height/3, 100, 160);
+            ctx.drawImage(imageA1, width/1.65, height/3, 100, 200);
             // N
             var imageA1 = new Image();
             imageA1.src = "./img/t13.png";
-            ctx.drawImage(imageA1, width/1.48, height/3, 100, 160);
+            ctx.drawImage(imageA1, width/1.48, height/3, 100, 200);
+
 
             ctx.fillStyle = "rgba(240, 240, 240, 0.0)"; // Button background color
             ctx.fillRect(buttonX, buttonY, buttonWidth, buttonHeight);
@@ -332,7 +321,7 @@
                         //new
                         // Draw the letter inside the balloon
                         gameCtx.font = '29px Arial';
-                        gameCtx.fillStyle = 'white';
+                        gameCtx.fillStyle = 'black';
                         gameCtx.textAlign = 'center';
                         gameCtx.fillText(balloon.text, balloon.x - 13, balloon.y - 10);
 
@@ -368,6 +357,7 @@
                         createBalloon();
                     }
                     requestAnimationFrame(gameLoop);
+                    // drawImage();
 
                 }
                 gameLoop();
